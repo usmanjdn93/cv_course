@@ -90,7 +90,7 @@ def process_multiple_folders(base_path):
     return results
 
 # Base directory containing multiple folders
-base_path = 'cv_project/data-gray'
+base_path = 'data-gray'
 
 # Process all folders
 all_results = process_multiple_folders(base_path)

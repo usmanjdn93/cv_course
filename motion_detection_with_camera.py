@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import time
 
-def draw_flow(img, floq, step=16):
+def draw_flow(img, floq, step=8):
     h, w = img.shape[:2]
     y, x = np.mgrid[step/2:h:step, step/2:w:step].reshape(2, -1).astype(int)
     fx, fy = floq[y, x].T
@@ -40,9 +40,6 @@ cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("error: Unable to access the camera.")
     exit()
-
-# Allow the camera to initialize
-time.sleep(2)
 
 # Read the first frame
 suc, prev = cap.read()
